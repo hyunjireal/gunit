@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\장현지\\\\team3project\\\\airsoft\" -Force)",
+      "Bash(Select-Object Name, FullName)",
+      "Bash(npx tsc *)",
+      "Bash(xargs grep -l \"type MatchEvent\\\\|interface MatchEvent\")",
+      "WebFetch(domain:www.figma.com)",
+      "mcp__figma__get_design_context",
+      "Bash(xargs grep -l \"tournament\\\\|Tournament\\\\|4강\\\\|대진표\\\\|MVP\")",
+      "Bash(xargs grep -l \"하이라이트\\\\|highlight\\\\|Highlight\")",
+      "Bash(xargs grep -l \"tournament\\\\|Tournament\\\\|MVP\\\\|highlight\")",
+      "Bash(xargs grep -l \"4강\\\\|대진표\\\\|MVP 투표\")",
+      "Bash(xargs grep -l \"tournament\\\\|Tournament\\\\|MVP\\\\|Highlight\\\\|highlight\")"
+    ]
+  }
+}

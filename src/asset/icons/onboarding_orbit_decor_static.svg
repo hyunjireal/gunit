@@ -1,0 +1,63 @@
+<svg width="390" height="260" viewBox="0 0 390 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Static orbit decoration for onboarding character">
+  <defs>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.72 0 0 0 0 1 0 0 0 0 0.02 0 0 0 0.55 0" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <linearGradient id="limeStroke" x1="41" y1="61" x2="353" y2="202" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4FFD0"/>
+      <stop offset="0.42" stop-color="#CFFF24"/>
+      <stop offset="1" stop-color="#AEEB00"/>
+    </linearGradient>
+    <linearGradient id="starGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F2FFB1"/>
+      <stop offset="1" stop-color="#B7F000"/>
+    </linearGradient>
+    <radialGradient id="limeDot" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.35 0.25) rotate(50) scale(0.9)">
+      <stop stop-color="#F7FFB8"/>
+      <stop offset="0.58" stop-color="#CFFF24"/>
+      <stop offset="1" stop-color="#8BB900"/>
+    </radialGradient>
+    <radialGradient id="darkDot" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.34 0.24) rotate(47) scale(0.92)">
+      <stop stop-color="#5E6264"/>
+      <stop offset="0.55" stop-color="#1B1D1D"/>
+      <stop offset="1" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="whiteDot" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.32 0.25) rotate(48) scale(0.92)">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="0.67" stop-color="#E8E8E8"/>
+      <stop offset="1" stop-color="#BBBBBB"/>
+    </radialGradient>
+  </defs>
+
+  <g filter="url(#softGlow)">
+    <path d="M33 190C68 224 166 222 232 194C302 164 367 95 349 64C335 39 285 38 222 62" stroke="url(#limeStroke)" stroke-width="7" stroke-linecap="round" stroke-dasharray="18 18"/>
+    <path d="M51 164C88 116 160 96 223 98C290 100 337 125 354 164" stroke="#EFFF9C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 14" opacity="0.42"/>
+  </g>
+
+  <g filter="url(#softGlow)" stroke-linecap="round">
+    <path d="M305 198L326 187" stroke="#CFFF24" stroke-width="6" opacity="0.72"/>
+    <path d="M327 177L344 164" stroke="#CFFF24" stroke-width="6" opacity="0.72"/>
+    <path d="M264 52L286 41" stroke="#F1FFB1" stroke-width="3" opacity="0.52"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <circle cx="315" cy="33" r="14" fill="url(#limeDot)"/>
+    <circle cx="56" cy="65" r="5" fill="url(#whiteDot)"/>
+    <circle cx="332" cy="218" r="7" fill="url(#limeDot)"/>
+    <circle cx="85" cy="205" r="4" fill="url(#limeDot)" opacity="0.9"/>
+    <circle cx="47" cy="125" r="6" fill="url(#darkDot)" opacity="0.75"/>
+  </g>
+
+  <g filter="url(#softGlow)">
+    <path d="M63 41C65.8 52.5 73.5 55.5 86 57C73.5 59.8 66.3 65.7 63.2 78C60 65.7 52.6 60.2 39 57.1C52.1 54.3 60.2 52 63 41Z" fill="url(#starGrad)"/>
+    <path d="M344 121C345.5 127.3 349.9 130.1 356 131.3C349.7 132.8 346.2 136.2 344.3 143C342.5 136.2 338.7 132.8 332 131.2C338.7 129.7 342.5 127.3 344 121Z" fill="#F7F7F7" opacity="0.95"/>
+  </g>
+</svg>

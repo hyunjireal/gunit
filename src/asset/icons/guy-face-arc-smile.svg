@@ -1,0 +1,19 @@
+<svg width="120" height="56" viewBox="0 0 120 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Guy LED Face - ◡‿◡</title>
+  <defs>
+    <filter id="ledGlow" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#ledGlow)" stroke="#D7FF1F" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.2">
+    <!-- eyes: ◡   ◡ -->
+    <path d="M18 22C22 30 34 30 38 22"/>
+    <path d="M82 22C86 30 98 30 102 22"/>
+    <!-- mouth: ‿ placed clearly lower, not between the eyes -->
+    <path d="M45 37C50 44 70 44 75 37"/>
+  </g>
+</svg>

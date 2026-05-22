@@ -1,0 +1,18 @@
+{
+  "name": "GUNIT",
+  "short_name": "GUNIT",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0B1118",
+  "theme_color": "#0B1118",
+  "description": "에어소프트 게임 일정, 팀원 모집, 초보자 가이드를 연결하는 커뮤니티 앱",
+  "icons": [
+    {
+      "src": "/launcherIcon.png",
+      "sizes": "2048x2048",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

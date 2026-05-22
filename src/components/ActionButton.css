@@ -1,0 +1,84 @@
+.app_action_button {
+  --app-action-min-height: 50px;
+  --app-action-padding-inline: 16px;
+  --app-action-radius: 10px;
+  --app-action-font-size: 18px;
+  color-scheme: light;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--app-action-min-height);
+  padding: 12px var(--app-action-padding-inline);
+  border: none;
+  border-radius: var(--app-action-radius);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+  box-shadow: none;
+  filter: none;
+  mix-blend-mode: normal;
+  overflow: hidden;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  cursor: pointer;
+  font-family: var(--font-pretendard);
+  font-size: var(--app-action-font-size);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.app_action_button--light {
+  background: var(--color-white);
+  color: var(--color-black);
+  -webkit-text-fill-color: var(--color-black);
+}
+
+.app_action_button--accent {
+  background: var(--color-lime);
+  color: var(--color-black);
+  -webkit-text-fill-color: var(--color-black);
+}
+
+.app_action_button--apply {
+  --app-action-min-height: 42px;
+  --app-action-radius: 6px;
+  --app-action-font-size: 16px;
+  min-height: 42px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--color-khaki);
+  color: var(--color-white);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  -webkit-text-fill-color: var(--color-white);
+}
+
+:root[data-theme='dark'] .app_action_button--apply {
+  border: 1px solid var(--color-lime);
+  background: rgba(226, 253, 52, 0.1);
+  color: var(--color-lime);
+  -webkit-text-fill-color: var(--color-lime);
+}
+
+.app_action_button__label {
+  color: inherit;
+  text-decoration: none;
+  -webkit-text-fill-color: inherit;
+}
+
+.onboarding_flow .app_action_button,
+.auth_screen .app_action_button {
+  --app-fluid-range: clamp(0px, calc(100vw - 393px), 631px);
+  --app-action-min-height: calc(50px + 18 * (var(--app-fluid-range) / 631));
+  --app-action-padding-inline: calc(16px + 12 * (var(--app-fluid-range) / 631));
+  --app-action-radius: calc(10px + 6 * (var(--app-fluid-range) / 631));
+  --app-action-font-size: calc(18px + 6 * (var(--app-fluid-range) / 631));
+}

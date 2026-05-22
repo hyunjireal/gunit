@@ -1,0 +1,509 @@
+.point_history_page {
+  --point-history-accent: #abcc15;
+  --point-history-surface: #29261c;
+  padding: 0 0 36px;
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-pretendard);
+}
+
+.point_history_shell {
+  width: min(calc(100% - 46px), 720px);
+  margin: 0 auto;
+}
+
+.point_history_content {
+  display: grid;
+  gap: 18px;
+}
+
+.point_history_header {
+}
+
+.point_history_header_left {
+}
+
+.point_history_back_button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.point_history_back_icon {
+}
+
+.point_history_title,
+.point_history_section_title,
+.point_history_section_caption,
+.point_history_hero_label,
+.point_history_hero_description,
+.point_history_hero_note,
+.point_history_summary_stat_label,
+.point_history_summary_stat_value,
+.point_history_day_month,
+.point_history_day_date,
+.point_history_entry_title,
+.point_history_entry_description,
+.point_history_entry_points {
+  margin: 0;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.point_history_title {
+  color: var(--color-black);
+}
+
+.point_history_hero {
+  display: grid;
+  gap: 14px;
+  padding: 18px 18px 16px;
+  border-radius: 14px;
+  background: var(--point-history-surface);
+  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.08);
+}
+
+.point_history_hero_copy {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.point_history_hero_label {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.point_history_hero_total {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.point_history_hero_total strong {
+  color: var(--color-white);
+  font-size: clamp(25px, 6vw, 30px);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+.point_history_badge_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--point-history-accent);
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.point_history_badge_icon.is_small {
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+}
+
+.point_history_hero_description {
+  display: grid;
+  gap: 4px;
+  max-width: none;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(12px, 3.5vw, 13px);
+  font-weight: 400;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.point_history_hero_note {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.point_history_hero_stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.point_history_summary_stat {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.point_history_summary_stat_label_row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.point_history_summary_stat_label {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.point_history_summary_stat_value {
+  color: var(--color-white);
+  font-size: 17px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.point_history_info_wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.point_history_info_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.86);
+  cursor: pointer;
+}
+
+.point_history_info_icon {
+  width: 15px;
+  height: 15px;
+}
+
+.point_history_info_popup {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 2;
+  min-width: max-content;
+  padding: 7px 9px;
+  border: 1px solid rgba(171, 204, 21, 0.26);
+  border-radius: 8px;
+  background: var(--color-white);
+  color: var(--color-gray01);
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  box-shadow: 0 10px 20px rgba(17, 17, 17, 0.14);
+}
+
+.point_history_list_section {
+  display: grid;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.point_history_section_header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.point_history_section_title {
+  color: var(--color-black);
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-130);
+}
+
+.point_history_section_caption {
+  color: var(--color-gray03);
+  font-size: 12px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.point_history_day_list {
+  display: grid;
+  gap: 20px;
+}
+
+.point_history_day_group {
+  display: grid;
+  gap: 9px;
+}
+
+.point_history_day_heading {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+
+.point_history_day_month {
+  color: var(--color-black);
+  font-size: 17px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+}
+
+.point_history_day_date {
+  color: var(--color-black);
+  font-size: 17px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+}
+
+.point_history_day_entries {
+  display: grid;
+  gap: 8px;
+}
+
+.point_history_entry_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  background: var(--color-white);
+}
+
+.point_history_entry_main {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.point_history_entry_title {
+  color: var(--color-gray00);
+  font-size: 15px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.35;
+}
+
+.point_history_entry_description {
+  color: var(--color-gray02);
+  font-size: 13px;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.35;
+}
+
+.point_history_entry_points {
+  color: #bbe21c;
+  font-size: 15px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.point_history_back_button:focus-visible,
+.point_history_info_button:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+:root[data-theme='dark'] .mobile_frame:has(.point_history_page),
+:root[data-theme='dark'] .mobile_frame:has(.point_history_page) > main {
+  background: #1a1a1a;
+}
+
+:root[data-theme='dark'] .point_history_page,
+:root[data-theme='dark'] .point_history_header {
+  --point-history-accent: #bbe21c;
+  --point-history-surface: #66753f;
+  background: #1a1a1a;
+  color: var(--color-white);
+}
+
+:root[data-theme='dark'] .point_history_title,
+:root[data-theme='dark'] .point_history_section_title,
+:root[data-theme='dark'] .point_history_day_month,
+:root[data-theme='dark'] .point_history_day_date,
+:root[data-theme='dark'] .point_history_entry_title {
+  color: var(--color-white);
+}
+
+:root[data-theme='dark'] .point_history_back_icon {
+  filter: brightness(0) invert(1);
+}
+
+:root[data-theme='dark'] .point_history_hero {
+  background: var(--point-history-surface);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme='dark'] .point_history_hero_label,
+:root[data-theme='dark'] .point_history_hero_description {
+  color: var(--color-white);
+}
+
+:root[data-theme='dark'] .point_history_hero_note,
+:root[data-theme='dark'] .point_history_summary_stat_label,
+:root[data-theme='dark'] .point_history_entry_description {
+  color: #e9e9e9;
+}
+
+:root[data-theme='dark'] .point_history_summary_stat {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+:root[data-theme='dark'] .point_history_info_button {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--color-white);
+}
+
+:root[data-theme='dark'] .point_history_info_popup {
+  border-color: #4b4b4b;
+  background: #000000;
+  color: #e9e9e9;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.32);
+}
+
+:root[data-theme='dark'] .point_history_section_caption {
+  color: #9f9f9f;
+}
+
+:root[data-theme='dark'] .point_history_entry_row {
+  border-color: #4b4b4b;
+  background: #000000;
+}
+
+:root[data-theme='dark'] .point_history_back_button:focus-visible,
+:root[data-theme='dark'] .point_history_info_button:focus-visible {
+  outline-color: var(--point-history-accent);
+}
+
+@media (min-width: 640px) {
+  .point_history_page {
+    padding-bottom: 48px;
+  }
+
+  .point_history_content {
+    gap: 22px;
+  }
+
+  .point_history_hero {
+    gap: 16px;
+    padding: 20px 22px 18px;
+  }
+
+  .point_history_hero_label {
+    font-size: 14px;
+  }
+
+  .point_history_hero_total strong {
+    font-size: 32px;
+  }
+
+  .point_history_badge_icon {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+
+  .point_history_hero_description {
+    max-width: none;
+    font-size: 14px;
+  }
+
+  .point_history_hero_note {
+    font-size: 12px;
+  }
+
+  .point_history_summary_stat {
+    padding: 12px 14px;
+  }
+
+  .point_history_summary_stat_value {
+    font-size: 18px;
+  }
+
+  .point_history_day_list {
+    gap: 22px;
+  }
+
+  .point_history_day_month {
+    font-size: 18px;
+  }
+
+  .point_history_day_date {
+    font-size: 18px;
+  }
+
+  .point_history_entry_row {
+    padding: 15px 18px;
+  }
+
+  .point_history_entry_title {
+    font-size: 16px;
+  }
+
+  .point_history_entry_points {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .point_history_shell {
+    width: min(calc(100% - 72px), 1024px);
+  }
+
+  .point_history_content {
+    gap: 24px;
+  }
+
+  .point_history_hero {
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    align-items: stretch;
+    gap: 24px;
+    padding: 24px 28px;
+  }
+
+  .point_history_hero_copy {
+    align-content: center;
+  }
+
+  .point_history_hero_stats {
+    align-content: center;
+  }
+
+  .point_history_day_entries {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .point_history_hero {
+    padding: 17px 16px 15px;
+  }
+
+  .point_history_entry_row {
+    align-items: flex-end;
+  }
+
+  .point_history_entry_points {
+    padding-left: 0;
+  }
+}

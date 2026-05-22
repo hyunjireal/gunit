@@ -1,0 +1,25 @@
+.react_bits_masonry_item {
+  animation: reactBitsMasonryRise 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--react-bits-masonry-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+@keyframes reactBitsMasonryRise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .react_bits_masonry_item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
