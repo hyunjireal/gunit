@@ -1432,7 +1432,8 @@ a {
 .home_chat_coachmark.is_mvp_step .home_chat_coachmark_frame {
   --coachmark-mvp-focus-padding-x: 0px;
   --coachmark-mvp-focus-padding-y: 0px;
-  --coachmark-mvp-focus-offset-y: -20px;
+  --coachmark-mvp-focus-offset-y: 0px;
+  --coachmark-mvp-focus-height-adjust: 0px;
   --coachmark-mvp-connector-start-x: 63.61%;
   --coachmark-mvp-connector-start-y: 23.83%;
   --coachmark-mvp-connector-end-x: 69.47%;
@@ -1441,7 +1442,7 @@ a {
   --coachmark-cutout-left: calc(var(--coachmark-focus-left, 0px) - var(--coachmark-mvp-focus-padding-x));
   --coachmark-cutout-top: calc(var(--coachmark-focus-top, 0px) - var(--coachmark-mvp-focus-padding-y) + var(--coachmark-mvp-focus-offset-y));
   --coachmark-cutout-width: calc(var(--coachmark-focus-width, 0px) + (var(--coachmark-mvp-focus-padding-x) * 2));
-  --coachmark-cutout-height: calc(var(--coachmark-focus-height, 0px) + (var(--coachmark-mvp-focus-padding-y) * 2));
+  --coachmark-cutout-height: calc(var(--coachmark-focus-height, 0px) + (var(--coachmark-mvp-focus-padding-y) * 2) - var(--coachmark-mvp-focus-height-adjust));
 }
 
 .home_chat_coachmark_mvp_focus {
@@ -1561,10 +1562,11 @@ a {
 .home_chat_coachmark.is_buddy_step .home_chat_coachmark_frame {
   --coachmark-buddy-focus-padding-x: 0px;
   --coachmark-buddy-focus-padding-y: 0px;
+  --coachmark-buddy-copy-offset-y: 24px;
   --coachmark-buddy-connector-start-x: calc(var(--coachmark-buddy-cutout-left) + 16.29%);
   --coachmark-buddy-connector-start-y: 50.47%;
   --coachmark-buddy-connector-end-x: 35.62%;
-  --coachmark-buddy-connector-end-y: 59.86%;
+  --coachmark-buddy-connector-end-y: calc(59.86% + var(--coachmark-buddy-copy-offset-y));
   --coachmark-buddy-cutout-left: calc(var(--coachmark-focus-left, 0px) - var(--coachmark-buddy-focus-padding-x));
   --coachmark-buddy-cutout-top: calc(var(--coachmark-focus-top, 0px) - var(--coachmark-buddy-focus-padding-y));
   --coachmark-buddy-cutout-width: calc(var(--coachmark-focus-width, 0px) + (var(--coachmark-buddy-focus-padding-x) * 2));
@@ -1679,7 +1681,7 @@ a {
 }
 
 .home_chat_coachmark_bubble--buddy {
-  top: 57.75%;
+  top: calc(57.75% + var(--coachmark-buddy-copy-offset-y, 0px));
   right: auto;
   bottom: auto;
   left: 35.62%;
@@ -1692,7 +1694,7 @@ a {
 }
 
 .home_chat_coachmark_text--buddy {
-  top: 62.56%;
+  top: calc(62.56% + var(--coachmark-buddy-copy-offset-y, 0px));
   right: auto;
   bottom: auto;
   left: 40.2%;

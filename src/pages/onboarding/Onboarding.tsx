@@ -10,6 +10,10 @@ import onboarding02_01Image from '../../asset/images/onboarding02_01.png'
 import onboarding03Image from '../../asset/images/onboarding03.png'
 import onboarding03_01Image from '../../asset/images/onboarding03_01.png'
 import onboarding01Video from '../../asset/video/onboarding01.mp4'
+import {
+  OnboardingSlideFrame,
+  type OnboardingSlideFrameData,
+} from '../../components/OnboardingSlideFrame'
 import './Onboarding.css'
 
 const CREATED_MATCHES_KEY = 'airsoft:created-matches'
@@ -18,34 +22,20 @@ const ONBOARDING_THEME_COLOR = '#1a1a1a'
 const SIGNUP_COMPLETED_KEY = 'airsoft:signup-completed'
 const SIGNUP_MODE_KEY = 'airsoft:signup-mode'
 
-type OnboardingSlide = {
-  id: string
-  imageSrc: string
-  imageClassName?: string
-  overlayImageSrc?: string
-  overlayImageClassName?: string
-  copy: Array<{
-    text?: string
-    accent?: boolean
-    strong?: boolean
-    segments?: Array<{
-      text: string
-      accent?: boolean
-      strong?: boolean
-    }>
-  }>
-}
-
-const onboardingSlides: OnboardingSlide[] = [
+const onboardingSlides: OnboardingSlideFrameData[] = [
   {
     id: 'start',
     imageSrc: onboarding01Image,
     imageClassName: 'onboarding_rebuilt__image--first',
     overlayImageSrc: onboarding01_01Image,
     copy: [
-      { text: '에어소프트건' },
-      { text: '시작하고 싶었지만', accent: true, strong: true },
-      { text: '막막하셨죠?' },
+      { text: '장비부터 규칙까지 막막하다면' },
+      {
+        segments: [
+          { text: 'AI 가이드', accent: true, strong: true },
+          { text: '가 쉽게 알려드려요' },
+        ],
+      },
     ],
   },
   {
@@ -55,8 +45,13 @@ const onboardingSlides: OnboardingSlide[] = [
     overlayImageSrc: onboarding02_01Image,
     overlayImageClassName: 'onboarding_rebuilt__image--guide-overlay',
     copy: [
-      { text: '그래서 건잇이 준비했어요' },
-      { text: '당신의 첫 걸음을 함께할 가이드', accent: true, strong: true },
+      { text: '실전에 나가기 전 필요한 정보만' },
+      {
+        segments: [
+          { text: '가이드와 퀴즈', accent: true, strong: true },
+          { text: '로 준비해요' },
+        ],
+      },
     ],
   },
   {
@@ -66,8 +61,13 @@ const onboardingSlides: OnboardingSlide[] = [
     overlayImageSrc: onboarding03_01Image,
     overlayImageClassName: 'onboarding_rebuilt__image--community-overlay',
     copy: [
-      { text: '나만의 플레이를' },
-      { text: '친구들과 함께 이어가요', accent: true, strong: true },
+      { text: '함께할 사람이 필요하다면' },
+      {
+        segments: [
+          { text: '버디와 팀을 연결', accent: true, strong: true },
+          { text: '해드려요' },
+        ],
+      },
     ],
   },
 ]
@@ -213,240 +213,13 @@ export function Onboarding() {
             Skip
           </button>
 
-          <div className="onboarding_rebuilt__content">
-            <div className="onboarding_rebuilt__top">
-              <div className="onboarding_rebuilt__dots" aria-label="온보딩 페이지">
-                {orderedOnboardingSlides.map((slide, index) => (
-                  <button
-                    key={slide.id}
-                    className={`onboarding_rebuilt__dot${activeIndex === index ? ' is-active' : ''}`}
-                    type="button"
-                    aria-label={`${index + 1}번째 온보딩 보기`}
-                    aria-current={activeIndex === index ? 'true' : undefined}
-                    tabIndex={-1}
-                  />
-                ))}
-              </div>
-              <img className="onboarding_rebuilt__logo" src={logoIcon} alt="GUNIT" />
-              <div
-                className={[
-                  'onboarding_rebuilt__visual',
-                  `onboarding_rebuilt__visual--${activeSlide.id}`,
-                ]
-                  .filter(Boolean)
-                  .join(' ')}
-                aria-hidden="true"
-              >
-                <div
-                  className="onboarding_rebuilt__orbit onboarding_rebuilt__orbit--back"
-                  aria-hidden="true"
-                >
-                  <svg
-                    className="onboarding_rebuilt__orbit_line"
-                    viewBox="0 0 320 240"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      className="onboarding_rebuilt__orbit_track"
-                      d="M 34 120 C 35 99 51 81 77 70 C 86 66 96 64 108 66"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeDasharray="8 12"
-                    />
-                    <path
-                      className="onboarding_rebuilt__orbit_glow onboarding_rebuilt__orbit_glow--back-left"
-                      d="M 34 120 C 35 99 51 81 77 70 C 86 66 96 64 108 66"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      pathLength="100"
-                    />
-                    <path
-                      className="onboarding_rebuilt__orbit_track"
-                      d="M 191 60 C 249 65 286 91 286 120"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeDasharray="8 12"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="onboarding_rebuilt__orbit onboarding_rebuilt__orbit--white"
-                  aria-hidden="true"
-                >
-                  <svg
-                    className="onboarding_rebuilt__orbit_line"
-                    viewBox="0 0 320 240"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      className="onboarding_rebuilt__orbit_track"
-                      d="M 34 120 C 35 99 51 81 77 70 C 86 66 96 64 108 66"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeDasharray="8 12"
-                    />
-                    <path
-                      className="onboarding_rebuilt__orbit_glow onboarding_rebuilt__orbit_glow--white"
-                      d="M 34 120 C 35 99 51 81 77 70 C 86 66 96 64 108 66"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      pathLength="100"
-                    />
-                    <path
-                      className="onboarding_rebuilt__orbit_track"
-                      d="M 191 60 C 249 65 286 91 286 120"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeDasharray="8 12"
-                    />
-                    <path
-                      className="onboarding_rebuilt__orbit_track"
-                      d="M 286 120 C 286 156 229 184 160 184 C 91 184 34 156 34 120"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeDasharray="8 12"
-                    />
-                    <path
-                      className="onboarding_rebuilt__orbit_glow onboarding_rebuilt__orbit_glow--white-long"
-                      d="M 286 120 C 286 156 229 184 160 184 C 91 184 34 156 34 120"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      pathLength="100"
-                    />
-                  </svg>
-                </div>
-                <div className="onboarding_rebuilt__orbit_dots" aria-hidden="true">
-                  <span className="onboarding_rebuilt__orbit_star" />
-                  <span className="onboarding_rebuilt__orbit_dot onboarding_rebuilt__orbit_dot--one" />
-                  <span className="onboarding_rebuilt__orbit_dot onboarding_rebuilt__orbit_dot--two" />
-                  <span className="onboarding_rebuilt__orbit_dot onboarding_rebuilt__orbit_dot--three" />
-                  <span className="onboarding_rebuilt__orbit_dot onboarding_rebuilt__orbit_dot--four" />
-                  <span className="onboarding_rebuilt__orbit_dot onboarding_rebuilt__orbit_dot--five" />
-                </div>
-                <div
-                  key={`media-${activeSlide.id}`}
-                  className={[
-                    'onboarding_rebuilt__slide_media',
-                    `onboarding_rebuilt__slide_media--${activeSlide.id}`,
-                    `is-slide-${slideDirection}`,
-                  ]
-                    .filter(Boolean)
-                    .join(' ')}
-                >
-                  <img
-                    className={[
-                      'onboarding_rebuilt__image',
-                      `onboarding_rebuilt__image--${activeSlide.id}-base`,
-                      activeSlide.imageClassName,
-                    ]
-                      .filter(Boolean)
-                      .join(' ')}
-                    src={activeSlide.imageSrc}
-                    alt=""
-                  />
-                  {activeSlide.overlayImageSrc && (
-                    <img
-                      className={[
-                        'onboarding_rebuilt__image',
-                        'onboarding_rebuilt__image--overlay',
-                        `onboarding_rebuilt__image--${activeSlide.id}-overlay`,
-                        activeSlide.overlayImageClassName,
-                      ]
-                        .filter(Boolean)
-                        .join(' ')}
-                      src={activeSlide.overlayImageSrc}
-                      alt=""
-                    />
-                  )}
-                </div>
-                <div
-                  className="onboarding_rebuilt__orbit onboarding_rebuilt__orbit--front"
-                  aria-hidden="true"
-                >
-                  <svg
-                    className="onboarding_rebuilt__orbit_line"
-                    viewBox="0 0 320 240"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      className="onboarding_rebuilt__orbit_track"
-                      d="M 286 120 C 286 156 229 184 160 184 C 91 184 34 156 34 120"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeDasharray="8 12"
-                    />
-                    <path
-                      className="onboarding_rebuilt__orbit_glow"
-                      d="M 286 120 C 286 156 229 184 160 184 C 91 184 34 156 34 120"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      pathLength="100"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <h1
-                key={`copy-${activeSlide.id}`}
-                className={[
-                  'onboarding_rebuilt__copy',
-                  `is-slide-${slideDirection}`,
-                ]
-                  .filter(Boolean)
-                  .join(' ')}
-                id={`onboarding-title-${activeSlide.id}`}
-              >
-                {activeSlide.id === 'community' ? (
-                  <span className="onboarding_rebuilt__copy_line">
-                    <span className="onboarding_rebuilt__copy_segment">안전하고 친절한<br></br> </span>
-                    <span className="onboarding_rebuilt__copy_segment is-accent is-strong">
-                      커뮤니티와 연결
-                    </span>
-                    <span className="onboarding_rebuilt__copy_segment">해드려요</span>
-                  </span>
-                ) : activeSlide.id === 'guide' ? (
-                  <>
-                    <span className="onboarding_rebuilt__copy_line">실제 경험 기반 정보로</span>
-                    <span className="onboarding_rebuilt__copy_line">
-                      <span className="onboarding_rebuilt__copy_segment is-accent is-strong">
-                        정확하게 안내
-                      </span>
-                      <span className="onboarding_rebuilt__copy_segment">해요</span>
-                    </span>
-                  </>
-                ) : (
-                  activeSlide.copy.map((line) => (
-                    <span
-                      key={line.text}
-                      className={[
-                        'onboarding_rebuilt__copy_line',
-                        line.accent ? 'is-accent' : '',
-                        line.strong ? 'is-strong' : '',
-                      ]
-                        .filter(Boolean)
-                        .join(' ')}
-                    >
-                      {line.text}
-                    </span>
-                  ))
-                )}
-              </h1>
-            </div>
-
-          </div>
-
+          <OnboardingSlideFrame
+            activeIndex={activeIndex}
+            direction={slideDirection}
+            logoSrc={logoIcon}
+            slide={activeSlide}
+            slides={orderedOnboardingSlides}
+          />
           <div className="onboarding_rebuilt__actions has-auth">
             {isLastSlide ? (
               <OnboardingButton label="다음" onClick={() => navigate('/login')} />

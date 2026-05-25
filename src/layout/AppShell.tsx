@@ -188,6 +188,32 @@ export function AppShell() {
   const showChatCoachmark = !chatCoachmarkDismissed && shouldShowChatCoachmark(location.pathname)
 
   useEffect(() => {
+    if (!showChatCoachmark) {
+      return undefined
+    }
+
+    const preventUserScroll = (event: Event) => {
+      event.preventDefault()
+    }
+
+    const preventScrollKey = (event: KeyboardEvent) => {
+      if ([' ', 'ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End'].includes(event.key)) {
+        event.preventDefault()
+      }
+    }
+
+    window.addEventListener('wheel', preventUserScroll, { passive: false })
+    window.addEventListener('touchmove', preventUserScroll, { passive: false })
+    window.addEventListener('keydown', preventScrollKey)
+
+    return () => {
+      window.removeEventListener('wheel', preventUserScroll)
+      window.removeEventListener('touchmove', preventUserScroll)
+      window.removeEventListener('keydown', preventScrollKey)
+    }
+  }, [showChatCoachmark])
+
+  useEffect(() => {
     if (!showChatCoachmark || chatCoachmarkStep === 0) {
       return undefined
     }
