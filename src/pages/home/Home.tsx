@@ -86,7 +86,7 @@ const homeEventBanners = [
   },
   {
     id: 'overwatch-quiz-2',
-    to: '/guide/quiz',
+    to: '/buddy',
     backgroundImage: homeBannerBg02,
     label: '나의 버디 매치',
     title: '초행도 걱정 없이',
@@ -95,8 +95,7 @@ const homeEventBanners = [
   },
   {
     id: 'r6-tactics',
-    to: '/match',
-    state: { scrollTo: 'ai-recommend' },
+    to: '/community',
     backgroundImage: homeBannerBg03,
     label: '플레이 팁부터 후기까지',
     title: '초보질문방에서',
@@ -1009,7 +1008,6 @@ export function Home() {
             <EventBanner
               key={banner.id}
               to={banner.to}
-              state={banner.state}
               backgroundImage={banner.backgroundImage}
               label={banner.label}
               title={banner.title}
